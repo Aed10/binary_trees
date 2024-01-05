@@ -10,22 +10,22 @@
  */
 void	binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-    binary_tree_t	*node;
-    binary_tree_t	*left;
-    binary_tree_t	*right;
+	binary_tree_t	*node;
+	binary_tree_t	*left;
+	binary_tree_t	*right;
 
-    if (tree == NULL || func == NULL)
-        return;
-    node = (binary_tree_t *)tree;
-    while (node != NULL)
-    {
-        left = node->left;
-        right = node->right;
-        func(node->n);
-        if (left != NULL)
-            binary_tree_levelorder(left, func);
-        if (right != NULL)
-            binary_tree_levelorder(right, func);
-        return;
-    }
+	if (tree == NULL || func == NULL)
+		return;
+	node = (binary_tree_t *)tree;
+	while (node != NULL)
+	{
+		left = node->left;
+		right = node->right;
+		func(node->n);
+		if (left != NULL)
+			binary_tree_levelorder(left, func);
+		if (right != NULL)
+			binary_tree_levelorder(right, func);
+		return;
+	}
 }
